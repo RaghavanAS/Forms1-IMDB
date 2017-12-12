@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-wrap">
+              <label name="movie List">Movie Details</label>
+                <table class="table">
+                  <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Movie Name</th>
+                        <th>Rating</th>
+                        <th>Description</th>
+                        <th>Release Year</th>
+                    </tr>
+                  </thead>
+        <!-- Using ngFor for displaing the movie array and using ngSTyle to represent rating in different colors -->
+                    <tr appHighlighter *ngFor="let movieList of movieDetail;let i = index" [attr.data-index]="i" >
+                        <td>{{i+1}}</td>
+                        <td>{{movieList?.MovieName}}</td>
+                        <td>{{movieList?.Rating}}</td>
+                        <td>{{movieList?.Description}}</td>
+                        <td>{{movieList?.Date_Of_Release | date : 'yyyy' }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
